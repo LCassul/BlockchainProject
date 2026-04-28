@@ -6,5 +6,19 @@
         "file": "contract/hellho.sol"
       }
     }
+  },
+  "contracts/1_Storage.sol": {
+    "__sources__": {}
+  },
+  "contracts/2_Owner.sol": {
+    "__sources__": {}
+  },
+  "contracts/3_Ballot.sol": {
+    "__sources__": {
+      "contracts/3_Ballot.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity  ^0.8.34;\n\ncontract Enquete{\n    // Atributos composto\n    struct opcaoVoto{\n        string descricao;\n        uint256 quantidade;\n    }\n\n    // Atributos simples\n    struct EnqueteInfo{\n        string titulo;\n        address criador;\n        bool activa;\n        opcaoVoto[] opcoes;\n        mapping(address => bool) jaVotou;\n    }  \n    \n    mapping(uint256 => EnqueteInfo) private enquetes;\n    uint256 private  contadorEnquete;\n\n\n\n    // Enquete é criada\n    event EnqueteCriada(uint256 idEnquete, string titulo, address criador);\n    // Um voto é regitado\n    event VotoRegistado(uint256 idEnquete, uint256 indiceOpcao, address votante);\n    // Enquete é finalizada\n    event EnqueteEncerrada(uint256 idEnquete, address criador);\n\n    function criarEnquete(string memory _titulo, string[] memory _opcoes) external {\n        \n    }\n\n\n  }\n",
+        "file": "contracts/3_Ballot.sol"
+      }
+    }
   }
 }
