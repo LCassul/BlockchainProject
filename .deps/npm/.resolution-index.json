@@ -1,0 +1,10 @@
+{
+  "contract/hellho.sol": {
+    "__sources__": {
+      "contract/hellho.sol": {
+        "content": "printf(\"hello, Wordl\")",
+        "file": "contract/hellho.sol"
+      }
+    }
+  }
+}
