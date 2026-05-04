@@ -66,29 +66,28 @@ contract Enquete{
 
         enquete.activa = false;
         
-        emit Enquetefechada(_idEnquete, msg.sender);
+        emit EnqueteEncerrada(_idEnquete, msg.sender);
 
     }  
     
-    function getEnquete(uint256 _idEnquete) external view returns (EnqueteInfo memory) {
-        string memory titulo,
-        bool activa,
-        string[] memory nomesOpcoes,
-        uint256[] memory votosOpcoes,
-        address criador,
-    ) {
-        EnqueteInfo storage enquete = enquetes[_idEnquete];
-        uint256 totalOpcoes = enquete.opcoes.length;
+    function getEnquete(uint256 _idEnquete) external view returns (
+    string memory titulo,
+    bool activa,
+    string[] memory nomesOpcoes,
+    uint256[] memory votosOpcoes,
+    address criador
+) {
+    EnqueteInfo storage enquete = enquetes[_idEnquete];
+    uint256 totalOpcoes = enquete.opcoes.length;
 
-        nomesOpcoes = new string[](totalOpcoes);
-        qvotosOpcoes = new uint256[](totalOpcoes);
+    nomesOpcoes = new string[](totalOpcoes);
+    votosOpcoes = new uint256[](totalOpcoes);
 
-        for(uint256 i = 0; i < totalOpcoes; i++){
-            nomesOpcoes[i] = enquete.opcoes[i].descricao;
-            votosOpcoes[i] = enquete.opcoes[i].votos;
-        }
-        
+    for(uint256 i = 0; i < totalOpcoes; i++) {
+        nomesOpcoes[i] = enquete.opcoes[i].descricao;
+        votosOpcoes[i] = enquete.opcoes[i].quantidade;
     }
-        return (enquete.titulo, enquete.ativa, nomesOpcoes, votosOpcoes, enquete.criador);
-    }      
+
+    return (enquete.titulo, enquete.activa, nomesOpcoes, votosOpcoes, enquete.criador);
+}
 }   
