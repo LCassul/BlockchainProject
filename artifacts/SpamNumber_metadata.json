@@ -1,0 +1,274 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "node",
+						"type": "address"
+					}
+				],
+				"name": "NodeBlocked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "nodeI",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "nodeJ",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newReputation",
+						"type": "uint256"
+					}
+				],
+				"name": "ReputationUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "number",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "reportedBy",
+						"type": "address"
+					}
+				],
+				"name": "SpamDetected",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_vizinho",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_valorComportamento",
+						"type": "uint256"
+					}
+				],
+				"name": "atualizarReputacao",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_usuarioMalicioso",
+						"type": "address"
+					}
+				],
+				"name": "bloqueio",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_verificador",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_numero",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "_confirmadoSpam",
+						"type": "bool"
+					}
+				],
+				"name": "incentivo",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "nodes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "reputation",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isBlocked",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_numero",
+						"type": "string"
+					}
+				],
+				"name": "reportarSpam",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "reputation",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "rewards",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_numero",
+						"type": "string"
+					}
+				],
+				"name": "verificar",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/spamNumber.sol": "SpamNumber"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/spamNumber.sol": {
+			"keccak256": "0xeb7b586bfcb38c578aba889010ca42ddd206d6fea430293cbdd3d31754e9e163",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a33615a27883d9b48e9ed9e082b5da3f422a24f3f115cf789243fdeee59b8ca1",
+				"dweb:/ipfs/QmPjLawm1jwQszQ1dfeAUK8eW1i5xfrJmV3h4AaR3ddsTE"
+			]
+		}
+	},
+	"version": 1
+}
